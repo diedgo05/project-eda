@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Deposito de bebidas "POYOYON"</title>
+</head>
+<body>
+    <div class="titulo">
+        <h1>Deposito de bebidas "POYOYON"</h1>
+    </div>
+    <div class="container">
+        <h2>AGREGAR BEBIDAS</h2>
+        <input id="nombre" type="text" placeholder="Nombre">
+        <input id="Precio" type="number" placeholder="precio">
+        <input id="ID" type="number" placeholder="ID">
+        <button id="btn-add">Agregar</button>
+    </div>
+    <div class="container">    
+        <h2>BUSQUEDA DE LA BEBIDA</h2>
+        <input  id="buscar" type="text" placeholder="nombre">
+        <button id="btn-search">Buscar</button>
+            <ul id="resultado"></ul>
+
+            </div>
+    <div class="container">
+        <h2>MÍNIMOS Y MÁXIMOS</h2>
+        <DIV>
+            <button id="min">Buscar ID menor</button>
+            <ul id="resultado1"></ul>
+        </DIV>
+        <DIV>
+            <button id="max">Buscar ID mayor</button>
+            <ul id="resultado2"></ul>
+        </DIV>
+    </div>
+    <div class="container">
+        <h2>LISTA DE BEBIDAS</h2>
+        <ul id="resultado3"></ul>
+    </div>
+    <script type="module" src="./src/controllers/script.js"></script>
+</body>
+</html>
