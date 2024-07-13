@@ -86,16 +86,16 @@ class BST {
         }
 
         recorrido(callback) {
-            return this.recorridoOrden(this.#root, callback);
+            return this.recorridoFn (this.#root, callback);
         }
-
-        recorridoFn (node, callback){
-            if (node !== null){
-                   this.recorridoFn (node.left, callback);
-                   callback(node.value);
-                   this.recorridoFn (node.right, callback);
+            
+            recorridoFn(node, callback) {
+                if (node!== null) {
+                    callback (node.value);
+                    this.recorridoFn (node.left,callback);
+                    this.recorridoFn(node.right,callback);
                 }
-            }
+         }
 }
 
 export default BST

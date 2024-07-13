@@ -10,7 +10,6 @@ btn.addEventListener("click", ()=> {
     console.log(bst)
     if (bst.add(productos)){
         alert("Registro exitoso");
-        agregarProductoList(productos);    
     }
     else
         alert("Ocurrio un problema");
@@ -19,15 +18,6 @@ btn.addEventListener("click", ()=> {
         document.getElementById('Precio').value = '';
         document.getElementById('ID').value = '';
     });
-
-
-    function agregarProductoList(productos) {
-    let lista = document.getElementById('resultado3');
-    let nuevoItem = document.createElement('li');
-    nuevoItem.textContent = `Nombre del producto: ${productos.nombre}, Precio: ${productos.precio}, ID del producto: ${productos.ID}`;
-    lista.appendChild(nuevoItem);
-    }
-
 
 
     let btn_buscar = document.getElementById('btn-search');
@@ -58,5 +48,16 @@ btn.addEventListener("click", ()=> {
         document.getElementById('resultado2').innerHTML = `La bebida con el mayor ID es ${node.value.nombre} su precio es $${node.value.precio} y su ID es de ${node.value.ID}`;
     });
 
+
+    let btn_preo = document.getElementById('btn-preo');
+
+    btn_preo.addEventListener('click', function() {
+        let result = [];
+        bst.recorrido((value) => {
+            result.push(`Nombre del producto: ${value.nombre}, Precio: ${value.precio}, ID del producto: ${value.ID}`);
+        });
+
+        document.getElementById('result4').innerHTML = result.join('<br>')
+    })
     
 
